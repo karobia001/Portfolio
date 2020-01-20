@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from projects.models import Project
+from folio.models import Project
 
 # Create your views here.
-def projects_shown(request):
+def project_shown(request):
     projects = Project.objects.all()
     context = {
         'projects':projects
@@ -10,9 +10,11 @@ def projects_shown(request):
     return render(request, 'project_shown.html',context)
 
 
-def projects_info(request):
-    projects = Project.objects.all(pk=pk)
+def project_info(request, pk):
+    title = "Portfolio"
+    project = Project.objects.get(pk=pk)
     context = {
-        'projects':project 
-    } 
-    return render(request, 'project_info.html', context )
+        'project': project,
+        'title':title
+    }
+    return render(request, 'project_info.html', context)
