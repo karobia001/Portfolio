@@ -1,5 +1,5 @@
 {% extends 'base.html' %}{% load static %}{% load bootstrap3 %}{% block content %}
-    <div class="jumbotron" style="background-image:url(http://digitaldrum.ca/wp-content/uploads/2016/09/MusicManagementGrant.jpg);background-size: cover; background-color: #333;  ">
+    <!-- <div class="jumbotron" style="background-image:url(http://digitaldrum.ca/wp-content/uploads/2016/09/MusicManagementGrant.jpg);background-size: cover; background-color: #333;  ">
         
         
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -65,5 +65,116 @@
         </div>
         {% endfor %}
     </div>
-</div>
+</div> -->
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<body>
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto mt-5">
+                    <h1 class="mb-5">DENNIS KAROBIA</h1>
+                </div>
+                <div class="col-xl-12 mx-auto order-now my-padding">
+                    <a href="#">FULL STARK DEVELOPER</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class=" text-center mybg">
+      <h2 class="container">
+          <h2 class="text-center">ABOUT ME</h2>
+          <div class="text-center">
+                  <div class="text-center">
+                      <img class="img-fluid rounded-circle mb-3" src="static/image/001.png" alt="">
+                      <h3 class="font-weight-dark text-center">Am a self motivated Java and Android developer Looking for a junior developer job.Am always pushing myself to grow by setting firm goals for myself. Then, once I've defined the benchmarks, I take the necessary steps to achieve those milestones.
+
+                        Am someone who demonstrates an unwavering resolve to do whatever must be done to produce the best short-term and 
+                        long-term results, no matter how difficult because am very 
+                        passionate about what i do.</h3>
+                  </div>
+              </div>
+
+  </section>
+<!--Gallery-->
+    <section id="photos">
+        <h1 class="mb-5 text-center">FEATURED MENUS</h1>
+        <div class="container">
+            <div class="row">
+                {% for project in projects %}
+                <div class="col-lg-4 col-sm-6 portfolio-item card mb-2">
+
+                    <a href="{{project.url}}" target="_blank"><img class="card-img-top" src="{{project.image.url}}" alt="{{ project.title }}"></a>
+                    
+                    <a href="#" data-featherlight="https://images.pexels.com/photos/7658/food-pizza-box-chalkboard.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"><h2>Pizza</h2></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <a href="{% url 'project_info' project.pk %}" class="btn btn-warning">
+                         Read More
+                     </a>
+                    </div>
+                </div>
+              {% endfor %}
+        </div>
+        </div>
+    </section>
+    <!--gallery end-->
+
+    <!-- Testimonials -->
+    
+    <!-- Call to Action -->
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row text-xs-center text-sm-left text-md-left mb-5">
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <p class="myfont-color">FOLLOW US:</p>
+                    <ul class="list-unstyled list-inline social">
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <h5 class="txt-upper">Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="javascript:void();">Home</a></li>
+                        <li><a href="javascript:void();">About</a></li>
+                        <li><a href="javascript:void();">Gallery</a></li>
+                        <li><a href="javascript:void();">Contact Us</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr class="myhr">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2  text-white">
+
+                    <p class="h6">Copyright © All Rights Reserved.<a class="text-green ml-2" href="#" target="_blank">Restro</a></p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <!--Footer -->
+
+    <div class="scroll-top-wrapper ">
+        <span class="scroll-top-inner">
+    <i class="fa fa-2x fa-arrow-circle-up"></i>
+  </span>
+    </div>
 {% endblock %}
